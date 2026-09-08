@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Outreach monitor</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1a1a2e">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Outreach">
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--line:#e2e4e8;--ink:#1a1a2e;--muted:#6b7280;
+--ok:#188549;--warn:#b45309;--crit:#b3261e}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,system-ui,-apple-system,sans-serif;margin:0;
+background:var(--bg);color:var(--ink)}
+header{background:var(--ink);color:#fff;padding:18px 24px}
+header h1{margin:0;font-size:19px}
+header p{margin:4px 0 0;opacity:.7;font-size:13px}
+main{max-width:1000px;margin:0 auto;padding:20px 16px 60px}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+margin:28px 0 10px}
+.banner{border-radius:12px;padding:14px 16px;font-weight:600;color:#fff}
+.banner.healthy{background:var(--ok)}.banner.warning{background:var(--warn)}
+.banner.critical{background:var(--crit)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{display:block;font-size:26px;line-height:1.1}
+.stat span{color:var(--muted);font-size:12px}
+.alert{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--muted);
+border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.alert.critical{border-left-color:var(--crit)}
+.alert.warning{border-left-color:var(--warn)}
+.alert.info{border-left-color:#2456d6}
+.alert h3{margin:0 0 4px;font-size:15px}
+.alert p{margin:0 0 6px;font-size:13px}
+.alert .do{font-size:13px;background:#f1f3f7;border-radius:8px;padding:8px 10px}
+.wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--card);
+border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:520px}
+th,td{text-align:left;padding:9px 12px;font-size:13px;border-bottom:1px solid #eef0f3}
+th{background:#fafbfc;color:var(--muted);font-weight:600}
+.pill{display:inline-block;border-radius:99px;padding:2px 9px;font-size:12px;
+background:#eef1f7}
+.pill.ok{background:#dff3e6;color:#12653a}.pill.bad{background:#fbe3e1;color:#8e1c15}
+.pill.warn{background:#fdf0dc;color:#8a4b06}
+footer{color:var(--muted);font-size:12px;margin-top:30px}
+@media(max-width:520px){.stat b{font-size:22px}main{padding:14px 10px 40px}}
+</style></head><body>
+<header><h1>Outreach monitor</h1>
+<p>2026-09-08 19:51 BST &middot; regenerated on every automated run</p>
+</header>
+<main>
+<div class="banner critical">Something is broken - act now</div>
+
+<h2>Needs attention</h2>
+<div class="alert critical"><h3>Bounce rate is 14.3%</h3><p>1 bounces from 7 sends. Mailbox providers treat 5%+ as list abuse and will start spam-foldering everything you send. Only 7 sends so far, so treat the percentage as a hint, not a trend.</p><div class="do"><b>Do this:</b> Stop sending, verify addresses before drafting, and remove any guessed or scraped addresses from pipeline/1-leads.</div></div>
+
+<h2>Automations</h2>
+<div class="wrap"><table>
+<tr><th>Automation</th><th>Runs</th><th>Last activity</th><th>State</th></tr>
+<tr><td><b>Daily run (replies + approved sends)</b><br><span style='color:#6b7280;font-size:12px'>GitHub Actions - daily-outreach.yml</span></td><td>09:00 and 15:00 London, weekdays</td><td>50 min ago</td><td><span class="pill ok">on schedule</span></td></tr><tr><td><b>Lead finding</b><br><span style='color:#6b7280;font-size:12px'>Claude cloud routine</span></td><td>weekday mornings</td><td>1h ago</td><td><span class="pill ok">active</span></td></tr><tr><td><b>Reply handling</b><br><span style='color:#6b7280;font-size:12px'>Claude cloud routine</span></td><td>weekday afternoons</td><td>12d ago</td><td><span class="pill ok">active</span></td></tr>
+</table></div>
+
+<h2>Funnel</h2>
+<div class="grid">
+  <div class="stat"><b>7</b><span>leads on file</span></div>
+  <div class="stat"><b>1</b><span>drafts awaiting your approval</span></div>
+  <div class="stat"><b>0</b><span>approved, queued to send</span></div>
+  <div class="stat"><b>7</b><span>sent in last 7 days</span></div>
+  <div class="stat"><b>7</b><span>sent all time</span></div>
+  <div class="stat"><b>0</b><span>replies received</span></div>
+</div>
+
+<h2>Email health</h2>
+<div class="grid">
+  <div class="stat"><b>14.3%</b>
+    <span>bounce rate <span class="pill bad">1 bounces</span></span></div>
+  <div class="stat"><b>0.0%</b><span>opt-out rate (0)</span></div>
+  <div class="stat"><b>0.0%</b><span>reply rate</span></div>
+  <div class="stat"><b>4/10</b>
+    <span>sent in last 24h vs today's cap</span></div>
+  <div class="stat"><b>3h ago</b><span>last send</span></div>
+  <div class="stat"><b>2</b>
+    <span>warm-up week (of 4)</span></div>
+</div>
+
+<h2>Latest replies</h2>
+<p style='font-size:13px;color:#6b7280'>No replies yet.</p><p style='font-size:12px;color:#6b7280'>Business names and addresses are only in the private repo.</p>
+
+<footer>Rebuilt on every automated run. Add to your home screen to keep it one tap away.
+GitHub run history: ok.</footer>
+</main>
+<script>
+if ('serviceWorker' in navigator) {
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+}
+</script>
+</body></html>
