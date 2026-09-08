@@ -28,6 +28,9 @@ margin:28px 0 10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
 .stat b{display:block;font-size:26px;line-height:1.1}
+a.stat{display:block;text-decoration:none;color:inherit;
+border-color:#2456d6}
+a.stat span{color:#2456d6;font-weight:600}
 .stat span{color:var(--muted);font-size:12px}
 .alert{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--muted);
 border-radius:10px;padding:12px 14px;margin-bottom:10px}
@@ -50,13 +53,13 @@ footer{color:var(--muted);font-size:12px;margin-top:30px}
 @media(max-width:520px){.stat b{font-size:22px}main{padding:14px 10px 40px}}
 </style></head><body>
 <header><h1>Outreach monitor</h1>
-<p>2026-09-08 20:05 BST &middot; regenerated on every automated run</p>
+<p>2026-09-08 20:46 BST &middot; regenerated on every automated run</p>
 </header>
 <main>
-<div class="banner critical">Something is broken - act now</div>
+<div class="banner warning">Bounce rate is 14.3%</div>
 
 <h2>Needs attention</h2>
-<div class="alert critical"><h3>Bounce rate is 14.3%</h3><p>1 bounces from 7 sends. Mailbox providers treat 5%+ as list abuse and will start spam-foldering everything you send. Only 7 sends so far, so treat the percentage as a hint, not a trend.</p><div class="do"><b>Do this:</b> Stop sending, verify addresses before drafting, and remove any guessed or scraped addresses from pipeline/1-leads.</div></div>
+<div class="alert warning"><h3>Bounce rate is 14.3%</h3><p>1 bounces from 7 sends. Mailbox providers treat 5%+ as list abuse and will start spam-foldering everything you send. Only 7 sends so far, so treat the percentage as a hint, not a trend.</p><div class="do"><b>Do this:</b> Stop sending, verify addresses before drafting, and remove any guessed or scraped addresses from pipeline/1-leads.</div></div>
 
 <h2>Automations</h2>
 <div class="wrap"><table>
@@ -67,7 +70,7 @@ footer{color:var(--muted);font-size:12px;margin-top:30px}
 <h2>Funnel</h2>
 <div class="grid">
   <div class="stat"><b>7</b><span>leads on file</span></div>
-  <div class="stat"><b>1</b><span>drafts awaiting your approval</span></div>
+  <a class="stat action" href="https://github.com/MatthewWillan/auto-email-pipeline/issues?q=is%3Aopen+label%3Aneeds-approval"><b>2</b><span>drafts awaiting your approval &rarr; review them</span></a>
   <div class="stat"><b>0</b><span>approved, queued to send</span></div>
   <div class="stat"><b>7</b><span>sent in last 7 days</span></div>
   <div class="stat"><b>7</b><span>sent all time</span></div>
@@ -82,7 +85,7 @@ footer{color:var(--muted);font-size:12px;margin-top:30px}
   <div class="stat"><b>0.0%</b><span>reply rate</span></div>
   <div class="stat"><b>4/10</b>
     <span>sent in last 24h vs today's cap</span></div>
-  <div class="stat"><b>3h ago</b><span>last send</span></div>
+  <div class="stat"><b>4h ago</b><span>last send</span></div>
   <div class="stat"><b>2</b>
     <span>warm-up week (of 4)</span></div>
 </div>
